@@ -36,7 +36,7 @@ class _Register_screenState extends State<Register_screen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("JOB HUNT"),
+
 
           ],
         ),
