@@ -10,34 +10,51 @@ class Register_screen extends StatefulWidget {
 class _Register_screenState extends State<Register_screen> {
   @override
   Widget build(BuildContext context) {
+    final h = MediaQuery.sizeOf(context).height;
+    final w = MediaQuery.sizeOf(context).width;
     return Scaffold(
-      appBar: AppBar(
-        leading: Icon(Icons.menu),
-        title: SizedBox(
-          height: 40,
-          child: TextFormField(
-          
-            decoration: InputDecoration(
-              filled: true,
-              //fillColor: Colors.blue,
-                contentPadding: EdgeInsets.symmetric(vertical: 2,horizontal: 13),
-              hintText: "Search Job Here...",
-              prefixIcon: Icon(Icons.search),
-              border: OutlineInputBorder(
-                gapPadding: 50,
-                borderRadius: BorderRadius.circular(30),
-
-              )
-            ),
-          ),
-        ),
-      ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+
           children: [
-
-
+            SizedBox(
+              height: h * 0.05,
+            ),
+            Image.network(
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0wRfQ96Bh2OhRFjS6KZ5SMSOHOcP2E7dBSQ&usqp=CAU"),
+            SizedBox(
+              height: h * 0.02,
+            ),
+            Text(
+              "Sign up to find work you",
+              style: TextStyle(
+                fontSize: h * 0.03,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+            Text(
+              "love",
+              style: TextStyle(
+                fontSize: h * 0.03,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+            Container(
+              height: h*0.05,
+              width: w/1.2,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(h*0.02),
+                color: Colors.blue,
+              ),
+              child: Row(
+                children: [
+                  Container(
+                      height: h*.02,
+                      width: w*0.3,
+                      child: Image.asset("asset/images/WIN_20231024_15_12_10_Pro.jpg",height: 2,width: 2,)),
+                ],
+              ),
+            )
           ],
         ),
       ),
