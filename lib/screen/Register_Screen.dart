@@ -43,7 +43,7 @@ class _Register_screenState extends State<Register_screen> {
                 Text(
                   "Sign up to find work you",
                   style: TextStyle(
-                    fontSize: h * 0.04,
+                    fontSize: h * 0.03,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
