@@ -36,7 +36,7 @@ class _Register_screenState extends State<Register_screen> {
                   height: h * 0.05,
                 ),
                 Image.network(
-                    "https://tchelete.com/wp-content/uploads/2023/04/6-Tips-for-Hiring-off-Upwork.png"),
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIiTVitXsv4uZKxbKY4qcM38oXZMQNt2N-Zg&usqp=CAU"),
                 SizedBox(
                   height: h * 0.02,
                 ),
@@ -269,6 +269,9 @@ class _Register_screenState extends State<Register_screen> {
                       ),
                     ),
                   ],
+                ),
+                SizedBox(
+                  height: h*0.02,
                 ),
               ],
             ),
