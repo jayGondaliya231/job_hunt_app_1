@@ -7,6 +7,7 @@ class Common_TextField extends StatelessWidget {
   final TextEditingController Controller;
   final bool? visible;
   final IconButton? icon1;
+  final Icon? icons;
 
   const Common_TextField({
     super.key,
@@ -16,6 +17,7 @@ class Common_TextField extends StatelessWidget {
     required this.Controller,
     this.visible,
     this.icon1,
+    this.icons,
   });
 
   @override
@@ -35,6 +37,7 @@ class Common_TextField extends StatelessWidget {
         contentPadding: EdgeInsets.symmetric(horizontal: w * 0.02),
         //constraints: BoxConstraints(maxHeight: h * 0.045),
         hintText: hint_text,
+        prefixIcon: icons,
         hintStyle: TextStyle(color: Colors.grey, fontSize: h * 0.016),
         border: OutlineInputBorder(
             borderSide: BorderSide(color: Colors.blue.shade400,width: 2),
