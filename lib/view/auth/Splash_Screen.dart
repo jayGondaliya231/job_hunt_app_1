@@ -4,8 +4,6 @@ import 'package:job_hunt_app/view/auth/Login_Screen.dart';
 
 import '../../common_Widget/common_button.dart';
 
-
-
 class SplaceScreen extends StatefulWidget {
   const SplaceScreen({Key? key}) : super(key: key);
 
@@ -32,22 +30,22 @@ class _SplaceScreenState extends State<SplaceScreen> {
 
   List<Map<String, dynamic>> item = [
     {
-      "image": 'assets/images/S1.png',
-      "title": 'Office Furniture\'s',
+      "image": 'assets/images/S1.svg',
+      "title": 'Find Your Best Job Here!',
       "title1":
-      'Use filler text that has been edited for length an\n  format match on a the characteristics of real\n          content as closely as possible.',
+          'Find out Your desired job. Which is suitable \nfor your career.',
     },
     {
-      "image": 'assets/images/S2.png',
-      "title": 'Relaxing Furntures',
+      "image": 'assets/images/S2.svg',
+      "title": 'Boost your dreams!',
       "title1":
-      'Use filler text where helps your desing process, but use\nreal content you’ve got it as long as it does distract\nand slow down yout desing process.',
+          'you\'ve worked hard to achieve your goal;\nnow let us help you get there,',
     },
     {
-      "image": 'assets/images/S3.png',
-      "title": 'Home Furntures',
+      "image": 'assets/images/S3.svg',
+      "title": 'looking for an internship?',
       "title1":
-      'Desing is an evolutionary process , and filler text is just\none tool in your progress-pushing arsenal.',
+          'Are you a student and looking for an internship?\nDon\'t worry. We have got your back',
     },
   ];
   int selected = 0;
@@ -103,13 +101,10 @@ class _SplaceScreenState extends State<SplaceScreen> {
                         return Column(
                           children: [
                             SizedBox(
-                              height: height * 0.07,
+                              height: height * 0.01,
                             ),
-                            Image.asset(
+                            SvgPicture.asset(
                               item[index]['image'],
-                            ),
-                            SizedBox(
-                              height: height * 0.05,
                             ),
                             Column(
                               children: [
@@ -143,24 +138,24 @@ class _SplaceScreenState extends State<SplaceScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: List.generate(
                           3,
-                              (index) => Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: width * 0.02),
-                            child: GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  selected = index;
-                                });
-                              },
-                              child: selected == index
-                                  ? SvgPicture.asset(
-                                  "assets/images/scrooll_bullet.svg")
-                                  : CircleAvatar(
-                                backgroundColor: Colors.grey,
-                                radius: height * 0.007,
-                              ),
-                            ),
-                          )),
+                          (index) => Padding(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: width * 0.02),
+                                child: GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      selected = index;
+                                    });
+                                  },
+                                  child: selected == index
+                                      ? SvgPicture.asset(
+                                          "assets/images/scrooll_bullet.svg")
+                                      : CircleAvatar(
+                                          backgroundColor: Colors.grey,
+                                          radius: height * 0.007,
+                                        ),
+                                ),
+                              )),
                     ),
                   ),
                 ],
@@ -171,7 +166,7 @@ class _SplaceScreenState extends State<SplaceScreen> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: width * 0.05),
                 child: CommonButton(
-                  color: Colors.green.shade700,
+                    color: Colors.blue.shade600,
                     text: selected == 2 ? "Get Started" : "Next",
                     onPressed: () {
                       if (selected != 2) {
