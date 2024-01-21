@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:job_hunt_app/view/auth/Login_Screen.dart';
 import 'package:job_hunt_app/view/auth/Splash_Screen.dart';
+import 'package:job_hunt_app/view/auth/Welcome_Screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
     color: Colors.white, 
       debugShowCheckedModeBanner: false,
-      home:SplaceScreen(),
+      home: Welcome_Screen(),
     );
   }
 }

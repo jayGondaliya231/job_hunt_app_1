@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:job_hunt_app/view/auth/Login_Screen.dart';
+import 'package:job_hunt_app/view/auth/selection_screen.dart';
 
 import '../../common_Widget/common_button.dart';
 
@@ -71,7 +72,7 @@ class _SplaceScreenState extends State<SplaceScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => Login_Screen(),
+                              builder: (context) => Selection_screen(),
                             ));
                       },
                       child: Text(
@@ -178,7 +179,7 @@ class _SplaceScreenState extends State<SplaceScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Login_Screen()));
+                                builder: (context) => Selection_screen()));
                       }
                     }),
               )
