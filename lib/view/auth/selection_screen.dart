@@ -49,7 +49,6 @@ class _Selection_screenState extends State<Selection_screen> {
               child: Row(
                 children: [
                   Icon(Icons.account_circle_rounded,color: Colors.blue,size: h*0.05,)
-                  Icon(Icons.circle_,color: Colors.blue,size: h*0.05,)
                 ],
               ),
             ),
