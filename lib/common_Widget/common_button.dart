@@ -19,7 +19,7 @@ class CommonButton extends StatelessWidget {
     return InkWell(
       onTap: onPressed,
       child: Container(
-        height: h * 0.045,
+        height: h * 0.06,
         width: w / 1.2,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(w * 0.12),
