@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "821036531905",
+    "project_id": "job-hunt-app-95c97",
+    "storage_bucket": "job-hunt-app-95c97.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:821036531905:android:5c2df9d6bacadddeb11440",
+        "android_client_info": {
+          "package_name": "com.example.job_hunt_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsGoxtfMzFqX3t9YCnxFLIELI2PwHekQk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

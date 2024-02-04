@@ -30,38 +30,38 @@ environment:
 # versions available, run `flutter pub outdated`.
 
 dependencies:
-  cloud_firestore: ^4.3.1
-  country_list_pick: ^1.0.1+6
-  country_picker: ^2.0.19
+#  cloud_firestore: ^4.3.1
+#  country_list_pick: ^1.0.1+6
+#  country_picker: ^2.0.19
 
-  dropdown_button2: ^2.3.9
-  email_otp: ^2.1.1
-  file_picker: ^6.1.1
-  firebase_auth: ^4.2.4
-  firebase_core: ^2.4.1
-  firebase_storage: ^11.0.14
+#  dropdown_button2: ^2.3.9
+#  email_otp: ^2.1.1
+#  file_picker: ^6.1.1
+#  firebase_auth: ^4.2.4
+  firebase_core: ^2.25.3
+#  firebase_storage: ^11.0.14
   flutter:
     sdk: flutter
 
-  flutter_pdfview: ^1.0.4
-  fluttertoast: ^8.1.2
-  font_awesome_flutter: ^10.3.0
-  get: ^4.6.5
-  getwidget: ^4.0.0
+#  flutter_pdfview: ^1.0.4
+#  fluttertoast: ^8.1.2
+#  font_awesome_flutter: ^10.3.0
+#  get: ^4.6.5
+#  getwidget: ^4.0.0
 
-  google_sign_in: ^6.2.1
-  image_picker: ^1.0.7
-  intl: 0.18.1
-  lottie: ^3.0.0
-  mockito: ^5.4.0
-  pay: ^1.1.0
-  pdf: ^3.9.0
-  printing: ^5.10.1
-  provider: ^6.0.5
-  rive: ^0.12.4
-  shared_preferences: ^2.0.18
-  syncfusion_flutter_pdfviewer: ^24.1.45
-  url_launcher: ^6.1.8
+#  google_sign_in: ^6.2.1
+#  image_picker: ^1.0.7
+#  intl: 0.18.1
+#  lottie: ^3.0.0
+#  mockito: ^5.4.0
+#  pay: ^1.1.0
+#  pdf: ^3.9.0
+#  printing: ^5.10.1
+#  provider: ^6.0.5
+#  rive: ^0.12.4
+#  shared_preferences: ^2.0.18
+#  syncfusion_flutter_pdfviewer: ^24.1.45
+#  url_launcher: ^6.1.8
 
 
   # The following adds the Cupertino Icons font to your application.
