@@ -11,8 +11,8 @@ class Register_screen extends StatefulWidget {
 
 class _Register_screenState extends State<Register_screen> {
   final _firstName = TextEditingController();
-  final _lastName = TextEditingController();
   final _email = TextEditingController();
+  final _mobile_no = TextEditingController();
   final _password = TextEditingController();
   final _country = TextEditingController();
 
@@ -35,8 +35,8 @@ class _Register_screenState extends State<Register_screen> {
                 SizedBox(
                   height: h * 0.05,
                 ),
-                Image.network(
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIiTVitXsv4uZKxbKY4qcM38oXZMQNt2N-Zg&usqp=CAU"),
+                Image.asset(
+                    "assets/images/logo_app.jpeg"),
                 SizedBox(
                   height: h * 0.02,
                 ),
@@ -111,7 +111,7 @@ class _Register_screenState extends State<Register_screen> {
                   height: h*0.02,
                 ),
                 Common_TextField(
-                  hint_text: "First Name",
+                  hint_text: "Name",
                   type: TextInputType.name,
                   Controller: _firstName,
                   visible: false,
@@ -122,30 +122,6 @@ class _Register_screenState extends State<Register_screen> {
                         value.contains("\$") ||
                         value.contains("#") ||
                         value.contains("?") ||
-                        value.contains("^") ||
-                        value.contains("&")) {
-                      return "This field can not contain special characters";
-                    } else if (value.isEmpty) {
-                      return "* This field is required..";
-                    }
-                    return null;
-                  },
-                ),
-                SizedBox(
-                  height: h*0.015,
-                ),
-                Common_TextField(
-                  hint_text: "Last Name",
-                  type: TextInputType.name,
-                  Controller: _lastName,
-                  visible: false,
-                  ValidatorCommand: (value) {
-                    if (value!.contains("!") ||
-                        value.contains("*") ||
-                        value.contains("@") ||
-                        value.contains("#") ||
-                        value.contains("?") ||
-                        value.contains("\$") ||
                         value.contains("^") ||
                         value.contains("&")) {
                       return "This field can not contain special characters";
@@ -171,6 +147,25 @@ class _Register_screenState extends State<Register_screen> {
                       return "* This field is required..";
                     } else if (!emailValid) {
                       return "Enter correct email";
+                    }
+                    return null;
+                  },
+                ),
+
+                SizedBox(
+                  height: h*0.015,
+                ),
+                Common_TextField(
+                  hint_text: "Mobile No.",
+                  type: TextInputType.number,
+                  Controller: _mobile_no,
+                  visible: false,
+                  ValidatorCommand: (value) {
+                    if (value!.isEmpty) {
+                      return "Enter Phone";
+                    } else if (value.length < 10 ||
+                        value.length > 10) {
+                      return "Enter 10 characters mobile number";
                     }
                     return null;
                   },
