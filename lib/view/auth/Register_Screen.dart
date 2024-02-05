@@ -1,4 +1,6 @@
+
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:job_hunt_app/common_Widget/common_button.dart';
 import 'package:job_hunt_app/common_Widget/common_textfield.dart';
 
@@ -17,10 +19,12 @@ class _Register_screenState extends State<Register_screen> {
   final _country = TextEditingController();
 
   final form = GlobalKey<FormState>();
+  // FirebaseAuth auth = FirebaseAuth.instance;
   bool visibalstatus = false;
   bool check = false;
   @override
   Widget build(BuildContext context) {
+
     final h = MediaQuery.sizeOf(context).height;
     final w = MediaQuery.sizeOf(context).width;
     return Scaffold(
@@ -33,12 +37,12 @@ class _Register_screenState extends State<Register_screen> {
             child: Column(
               children: [
                 SizedBox(
-                  height: h * 0.05,
+                  height: h * 0.1,
                 ),
                 Image.asset(
-                    "assets/images/logo_app.jpeg"),
+                    "assets/images/LOGO.jpeg"),
                 SizedBox(
-                  height: h * 0.02,
+                  height: h * 0.05,
                 ),
                 Text(
                   "Sign up to find work you",
@@ -59,7 +63,26 @@ class _Register_screenState extends State<Register_screen> {
                 ),
                 InkWell(
                   onTap: () {
-                    print("ok");
+                    // try {
+                    //   GoogleSignIn googleSignIn = GoogleSignIn();
+                    //
+                    //   GoogleSignInAccount? account = await googleSignIn.signIn();
+                    //
+                    //   GoogleSignInAuthentication authProvider =
+                    //       await account!.authentication;
+                    //
+                    //   var credentialProvider = GoogleAuthProvider.credential(
+                    //     accessToken: authProvider.accessToken,
+                    //     idToken: authProvider.idToken,
+                    //   );
+                    //   var userCredentials =
+                    //       await auth.signInWithCredential(credentialProvider);
+                    //
+                    //   print("User: " + '${userCredentials.user!.displayName}');
+                    // } on FirebaseAuthException catch (e) {
+                    //   print('ERROR ${e.message}');
+                    // }
+
                   },
                   child: Container(
                     height: h * 0.045,
@@ -114,6 +137,7 @@ class _Register_screenState extends State<Register_screen> {
                   hint_text: "Name",
                   type: TextInputType.name,
                   Controller: _firstName,
+                  icons: Icon(Icons.person_outlined,color: Colors.grey,),
                   visible: false,
                   ValidatorCommand: (value) {
                     if (value!.contains("!") ||
@@ -139,6 +163,7 @@ class _Register_screenState extends State<Register_screen> {
                   type: TextInputType.emailAddress,
                   Controller: _email,
                   visible: false,
+                  icons: Icon(Icons.email_outlined,color: Colors.grey,),
                   ValidatorCommand: (value) {
                     bool emailValid = RegExp(
                         r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
@@ -159,6 +184,7 @@ class _Register_screenState extends State<Register_screen> {
                   hint_text: "Mobile No.",
                   type: TextInputType.number,
                   Controller: _mobile_no,
+                  icons: Icon(Icons.call_end_outlined,color: Colors.grey,),
                   visible: false,
                   ValidatorCommand: (value) {
                     if (value!.isEmpty) {
@@ -177,11 +203,12 @@ class _Register_screenState extends State<Register_screen> {
                   hint_text: "Password",
                   type: TextInputType.text,
                   Controller: _password,
+                  icons: Icon(Icons.lock_outline,color: Colors.grey,),
                   visible: !visibalstatus,
                   icon1: IconButton(
                     icon: Icon(visibalstatus
                         ? Icons.visibility
-                        : Icons.visibility_off),
+                        : Icons.visibility_off,color: Colors.grey,),
                     onPressed: () {
                       setState(() {
                         visibalstatus = !visibalstatus;
