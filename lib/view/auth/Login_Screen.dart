@@ -18,6 +18,7 @@ class _Login_ScreenState extends State<Login_Screen> {
     final h = MediaQuery.sizeOf(context).height;
     final w = MediaQuery.sizeOf(context).width;
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Form(
         key: form,
         child: SingleChildScrollView(
@@ -26,13 +27,10 @@ class _Login_ScreenState extends State<Login_Screen> {
             child: Column(
               children: [
                 SizedBox(
-                  height: h * 0.05,
+                  height: h * 0.03,
                 ),
-                Image.network(
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIiTVitXsv4uZKxbKY4qcM38oXZMQNt2N-Zg&usqp=CAU"),
-                SizedBox(
-                  height: h * 0.02,
-                ),
+                Image.asset('assets/images/JOB HUNT 12.png'),
+
 
                 Text(
                   "Login into JobHunt",
@@ -72,7 +70,7 @@ class _Login_ScreenState extends State<Login_Screen> {
                     }
                   },
                   text: "Continue with Email",
-                  color: Colors.green.shade700,
+                  color: Colors.blueGrey.shade700,
                 ),
                 SizedBox(
                   height: h * 0.02,
@@ -131,7 +129,7 @@ class _Login_ScreenState extends State<Login_Screen> {
                 Text(
                   "JobHunt uses cookies for analytics, personalized content and\nads. By using JobHunt's services,you agree to this use of\ncookies.",
                   style: TextStyle(
-                    fontSize: h * 0.012,
+                    fontSize: h * 0.013,
                   ),
                 ),
               ],

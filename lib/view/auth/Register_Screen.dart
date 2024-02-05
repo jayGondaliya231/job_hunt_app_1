@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:job_hunt_app/common_Widget/common_button.dart';
 import 'package:job_hunt_app/common_Widget/common_textfield.dart';
 
+import 'Login_Screen.dart';
+
 class Register_screen extends StatefulWidget {
   const Register_screen({super.key});
 
@@ -257,7 +259,7 @@ class _Register_screenState extends State<Register_screen> {
                 ),
                 CommonButton(
                   color: Colors.blue,
-                  text: "Continue woth Google",
+                  text: "Continue with Google",
                   onPressed: () {
                     if (form.currentState!.validate()) {
                       print("welcome");
@@ -271,7 +273,7 @@ class _Register_screenState extends State<Register_screen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Don’t have an Account?",
+                      "Already have an Account?",
                       style: TextStyle(fontWeight: FontWeight.w500),
                     ),
                     SizedBox(
@@ -279,11 +281,11 @@ class _Register_screenState extends State<Register_screen> {
                     ),
                     InkWell(
                       onTap: () {
-                        // Navigator.pushReplacement(
-                        //     context,
-                        //     MaterialPageRoute(
-                        //       builder: (context) => Login_Screen(),
-                        //     ));
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Login_Screen(),
+                            ));
                       },
                       child: Text(
                         "Login ",
@@ -291,6 +293,7 @@ class _Register_screenState extends State<Register_screen> {
                             fontWeight: FontWeight.bold,
                             color: Colors.blue,
                             decoration: TextDecoration.underline),
+
                       ),
                     ),
                   ],

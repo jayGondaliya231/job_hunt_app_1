@@ -4,6 +4,8 @@ import 'package:get_storage/get_storage.dart';
 import 'package:job_hunt_app/view/auth/Home_Screen.dart';
 import 'package:job_hunt_app/view/auth/Login_Screen.dart';
 import 'package:job_hunt_app/view/auth/Register_Screen.dart';
+import 'package:job_hunt_app/view/auth/Welcome_Screen.dart';
+import 'package:job_hunt_app/view/auth/selection_screen.dart';
 
 
 void main() {
@@ -19,7 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       color: Colors.white,
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: Welcome_Screen(),
     );
   }
 }
