@@ -41,7 +41,7 @@ class _Register_screenState extends State<Register_screen> {
                   fit: BoxFit.cover,
                   child: Container(
                     height: h*0.3,
-                    color: Colors.red,
+                    color: Colors.white,
                     child: Image.asset(
                         "assets/images/JOB HUNT 12.png"),
                   ),
