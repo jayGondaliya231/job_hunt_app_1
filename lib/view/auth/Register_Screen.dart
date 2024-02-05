@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:google_sign_in/google_sign_in.dart';
+// import 'package:google_sign_in/google_sign_in.dart';
 import 'package:job_hunt_app/common_Widget/common_button.dart';
 import 'package:job_hunt_app/common_Widget/common_textfield.dart';
 
@@ -36,14 +36,17 @@ class _Register_screenState extends State<Register_screen> {
             padding: EdgeInsets.symmetric(horizontal: w * 0.08),
             child: Column(
               children: [
-                SizedBox(
-                  height: h * 0.1,
+
+                FittedBox(
+                  fit: BoxFit.cover,
+                  child: Container(
+                    height: h*0.3,
+                    color: Colors.red,
+                    child: Image.asset(
+                        "assets/images/JOB HUNT 12.png"),
+                  ),
                 ),
-                Image.asset(
-                    "assets/images/LOGO.jpeg"),
-                SizedBox(
-                  height: h * 0.05,
-                ),
+
                 Text(
                   "Sign up to find work you",
                   style: TextStyle(
