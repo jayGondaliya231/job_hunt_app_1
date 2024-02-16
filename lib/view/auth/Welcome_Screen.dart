@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:get_storage/get_storage.dart';
 import 'package:job_hunt_app/view/auth/Register_Screen.dart';
 import 'Splash_Screen.dart';
 

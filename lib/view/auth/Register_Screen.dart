@@ -43,7 +43,7 @@ class _Register_screenState extends State<Register_screen> {
                   fit: BoxFit.cover,
                   child: Container(
                     height: h*0.3,
-                    color: Colors.white,
+                    color: Colors.red,
                     child: Image.asset(
                         "assets/images/JOB HUNT 12.png"),
                   ),
@@ -259,10 +259,10 @@ class _Register_screenState extends State<Register_screen> {
                 ),
                 CommonButton(
                   color: Colors.blue,
-                  text: "Continue with Google",
+                  text: "Continue woth Google",
                   onPressed: () {
                     if (form.currentState!.validate()) {
-                      print("welcome");
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => Login_Screen(),));
                     }
                   },
                 ),
@@ -273,7 +273,7 @@ class _Register_screenState extends State<Register_screen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Already have an Account?",
+                      "Don’t have an Account?",
                       style: TextStyle(fontWeight: FontWeight.w500),
                     ),
                     SizedBox(
@@ -293,7 +293,6 @@ class _Register_screenState extends State<Register_screen> {
                             fontWeight: FontWeight.bold,
                             color: Colors.blue,
                             decoration: TextDecoration.underline),
-
                       ),
                     ),
                   ],

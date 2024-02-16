@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:job_hunt_app/common_Widget/common_button.dart';
 import 'package:job_hunt_app/common_Widget/common_textfield.dart';
+import 'package:job_hunt_app/view/auth/Home_Screen.dart';
+import 'package:job_hunt_app/view/auth/Register_Screen.dart';
+
+import '../BottomBar.dart';
 
 
 class Login_Screen extends StatefulWidget {
@@ -13,6 +17,8 @@ class Login_Screen extends StatefulWidget {
 class _Login_ScreenState extends State<Login_Screen> {
   final form = GlobalKey<FormState>();
   final _username = TextEditingController();
+  final _password = TextEditingController();
+  bool visibalstatus = false;
   @override
   Widget build(BuildContext context) {
     final h = MediaQuery.sizeOf(context).height;
@@ -43,7 +49,7 @@ class _Login_ScreenState extends State<Login_Screen> {
                   height: h * 0.02,
                 ),
                 Common_TextField(
-                  hint_text: "Username or Email",
+                  hint_text: "Email",
                   type: TextInputType.emailAddress,
                   Controller: _username,
                   visible: false,
@@ -63,14 +69,72 @@ class _Login_ScreenState extends State<Login_Screen> {
                 SizedBox(
                   height: h * 0.02,
                 ),
+                Common_TextField(
+                  hint_text: "Password",
+                  type: TextInputType.text,
+                  Controller: _password,
+                  icons: Icon(Icons.lock_outline,color: Colors.grey,),
+                  visible: !visibalstatus,
+                  icon1: IconButton(
+                    icon: Icon(visibalstatus
+                        ? Icons.visibility
+                        : Icons.visibility_off,color: Colors.grey,),
+                    onPressed: () {
+                      setState(() {
+                        visibalstatus = !visibalstatus;
+                      });
+                    },
+                  ),
+
+                  ValidatorCommand: (value) {
+                    if (value!.isEmpty) {
+                      return "not valid email address!!";
+                    }
+                    return null;
+                  },
+                ),
+                SizedBox(
+                  height: h * 0.02,
+                ),
                 CommonButton(
                   onPressed: () {
                     if (form.currentState!.validate()) {
-                      print("welcome Login");
+                     Navigator.push(context, MaterialPageRoute(builder: (context) => bottombar(),));
                     }
                   },
-                  text: "Continue with Email",
-                  color: Colors.blueGrey.shade700,
+                  text: "Login",
+                  color: Colors.blue,
+                ),
+                SizedBox(
+                  height: h*0.015,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "You have already Account?",
+                      style: TextStyle(fontWeight: FontWeight.w500),
+                    ),
+                    SizedBox(
+                      width: w * 0.013,
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Register_screen(),
+                            ));
+                      },
+                      child: Text(
+                        "Register",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.blue,
+                            decoration: TextDecoration.underline),
+                      ),
+                    ),
+                  ],
                 ),
                 SizedBox(
                   height: h * 0.02,
@@ -129,7 +193,7 @@ class _Login_ScreenState extends State<Login_Screen> {
                 Text(
                   "JobHunt uses cookies for analytics, personalized content and\nads. By using JobHunt's services,you agree to this use of\ncookies.",
                   style: TextStyle(
-                    fontSize: h * 0.013,
+                    fontSize: h * 0.012,
                   ),
                 ),
               ],

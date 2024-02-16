@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:job_hunt_app/view/auth/RecentJob_Screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -10,13 +9,129 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
   @override
   Widget build(BuildContext context) {
     final h = MediaQuery.sizeOf(context).height;
     final w = MediaQuery.sizeOf(context).width;
     return Scaffold(
+      backgroundColor: Colors.white,
+      drawer: Drawer(
+        backgroundColor: Colors.white,
+        child: Column(
+          children: [
+            DrawerHeader(
+                child: Container(
+                  child:  GestureDetector(
+                          onTap: () {},
+                          child: Column(
+                            children: [
+                                   Container(
+                                alignment: Alignment.center,
+                                height: 100,
+                                width: 100,
+                                decoration: BoxDecoration(
+                                    color: Colors.black,
+                                    borderRadius: BorderRadius.circular(50)),
+                                child: Text(
+                                  "hello"
+                                      .toString()
+                                      .toUpperCase()
+                                      .substring(0, 1),
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 50,
+                                      color: Colors.white),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Text(
+                               "hi",
+                                style: TextStyle(
+                                    color: Colors.black,),
+                              )
+                            ],
+                          ),
+                        ),
+
+                )),
+            SizedBox(
+              height: 10,
+            ),
+            ListTile(
+              onTap: (){},
+              leading: Icon(
+                Icons.account_balance_sharp,
+                color: Colors.black,
+              ),
+              title: Text(
+                "Company",
+                style: TextStyle(color: Colors.black),
+              ),
+            ),
+            Padding(
+              padding:  EdgeInsets.only(left: 10, right: 10, top: 10),
+              child: Divider(
+                color: Colors.black,
+              ),
+            ),
+            ListTile(
+              onTap: () {},
+              leading: Icon(
+                Icons.notifications_active,
+                color: Colors.black,
+              ),
+              title: Text(
+                "Notification",
+                style: TextStyle(color: Colors.black),
+              ),
+            ),
+            Padding(
+              padding:  EdgeInsets.only(left: 10, right: 10, top: 10),
+              child: Divider(
+                color: Colors.black,
+              ),
+            ),
+            ListTile(
+              onTap: () {},
+              leading: Icon(
+                Icons.library_add_check_outlined,
+                color: Colors.black,
+              ),
+              title: Text(
+                "Invite Friend",
+                style: TextStyle(color: Colors.black),
+              ),
+            ),
+            Padding(
+              padding:  EdgeInsets.only(left: 10, right: 10, top: 10),
+              child: Divider(
+                color: Colors.black,
+              ),
+            ),
+            ListTile(
+              onTap: (){},
+              leading: Icon(
+                Icons.login,
+                color: Colors.black,
+              ),
+              title: Text(
+                "Cart",
+                style: TextStyle(color: Colors.black),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
+              child: Divider(
+                color: Colors.black,
+              ),
+            ),
+          ],
+        ),
+      ),
       appBar: AppBar(
-        leading: Icon(Icons.menu),
         backgroundColor: Colors.transparent,
         elevation: 0,
         scrolledUnderElevation: 0,
@@ -36,7 +151,7 @@ class _HomeScreenState extends State<HomeScreen> {
             decoration:
                 BoxDecoration(color: Colors.blue,
                 borderRadius: BorderRadius.only(
-                  bottomLeft: 
+                  bottomLeft:
                     Radius.circular(h * 0.02),
                   bottomRight: Radius.
                     circular(h * 0.02)
@@ -65,33 +180,58 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 SizedBox(height: h*0.04,),
+
+              ],
+            ),
+          ),
+          Padding(
+            padding:  EdgeInsets.symmetric(horizontal:w*0.04,vertical: h*0.01),
+            child: Row(
+              children: [
+                Text("Recent Job",style: TextStyle(
+                  fontSize: h*0.02,
+                  fontWeight: FontWeight.bold,
+
+                ),
+                ),
+                Spacer(),
+                Text("See More",style: TextStyle(color: Colors.grey,),)
               ],
             ),
           ),
           Expanded(
-            child: ListView(
-             padding: EdgeInsets.only(top: 15),
-             children: [
-              ListTile(
-                title: Text('Recent Jobs',style: Theme.of(context).textTheme.titleLarge),
-                trailing: TextButton(
-                  onPressed: () {},
-                  child: Text('see more'),
-                ),
+            child: ListView.builder(
+              itemCount: 20,
+             padding: EdgeInsets.all(w*0.04),
+             itemBuilder: (BuildContext context, int index) {
+                return  Container(
+                  height: h*0.1,
+                  margin: EdgeInsets.symmetric(vertical: h*0.01),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(
+                        color: Colors.black,
+                        width: 2,
+                      ),
+                      boxShadow: [BoxShadow(
+                        color: Colors.black,
+                        blurRadius: 0,
+                        spreadRadius: -1,
+                        offset:Offset(
+                            -4,6
+                        ),
+                      )]
+                  ),
+                  child: Center(child: Text("$index",style: TextStyle(fontSize: h*0.03),)),
+                );
+             },
+
               ),
-               SizedBox(
-                 height: h * 0.2,
-                 child: PageView(
-                   children: [
-                     RecentJobScreen(),
-                   ],
-                 ),
-               )
-            ],
-            ),
           ),
+
         ],
       ),
+
     );
   }
 }
