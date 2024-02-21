@@ -11,9 +11,6 @@ class _DrawerpageState extends State<Drawerpage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize{
-        PreferredSize:Size.fromHeight(50,h)
-    },
     );
   }
 }
