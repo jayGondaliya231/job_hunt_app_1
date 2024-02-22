@@ -25,7 +25,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
     "Save Job",
     "Logout",
   ];
-
   int id = 0;
   @override
   Widget build(BuildContext context) {
@@ -222,7 +221,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           Divider(),
                         ],
                       )),
-            )
+            ),
           ],
         ),
       ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:job_hunt_app/common_Widget/common_button.dart';
 import 'package:job_hunt_app/common_Widget/common_textfield.dart';
-import 'package:job_hunt_app/view/auth/Home_Screen.dart';
+import 'package:job_hunt_app/view/Home_Screen.dart';
 import 'package:job_hunt_app/view/auth/Register_Screen.dart';
 
 import '../BottomBar.dart';

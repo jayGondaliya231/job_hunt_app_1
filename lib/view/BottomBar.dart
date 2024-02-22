@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
 import 'Profiles_Screen.dart';
-import 'auth/Home_Screen.dart';
+import 'Home_Screen.dart';
 
 class bottombar extends StatefulWidget {
   const bottombar({Key? key}) : super(key: key);

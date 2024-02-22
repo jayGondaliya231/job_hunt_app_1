@@ -30,7 +30,7 @@ environment:
 # versions available, run `flutter pub outdated`.
 
 dependencies:
-#  cloud_firestore: ^4.3.1
+  cloud_firestore: ^4.3.1
 #  country_list_pick: ^1.0.1+6
 #  country_picker: ^2.0.19
 
@@ -40,14 +40,14 @@ dependencies:
   firebase_auth: ^4.2.4
   firebase_core: ^2.25.3
 #  provider: ^6.0.4
-#  firebase_storage: ^11.0.14
+  firebase_storage: ^11.0.14
   flutter:
     sdk: flutter
 
 #  flutter_pdfview: ^1.0.4
 #  fluttertoast: ^8.1.2
 #  font_awesome_flutter: ^10.3.0
-#  get: ^4.6.5
+  get: ^4.6.5
 #  getwidget: ^4.0.0
 
 #  google_sign_in: ^6.2.1
@@ -72,9 +72,9 @@ dependencies:
   google_fonts: ^6.1.0
   flutter_svg: ^2.0.9
   salomon_bottom_bar: ^3.3.2
-#  get_storage: ^2.1.1
+  get_storage: ^2.1.1
   google_sign_in: ^6.2.1
-
+  text_scroll: ^0.2.0
 
 dev_dependencies:
   flutter_test:

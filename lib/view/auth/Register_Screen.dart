@@ -1,9 +1,15 @@
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 // import 'package:google_sign_in/google_sign_in.dart';
 import 'package:job_hunt_app/common_Widget/common_button.dart';
 import 'package:job_hunt_app/common_Widget/common_textfield.dart';
 
+import '../../Controller/controller.dart';
+import '../BottomBar.dart';
 import 'Login_Screen.dart';
 
 class Register_screen extends StatefulWidget {
@@ -21,9 +27,20 @@ class _Register_screenState extends State<Register_screen> {
   final _country = TextEditingController();
 
   final form = GlobalKey<FormState>();
-  // FirebaseAuth auth = FirebaseAuth.instance;
+
+  Controller controller = Get.find();
+  CollectionReference user = FirebaseFirestore.instance.collection('user');
+  FirebaseAuth author = FirebaseAuth.instance;
   bool visibalstatus = false;
   bool check = false;
+
+  @override
+  void initState() {
+    super.initState();
+    visibalstatus = !true;
+  }
+
+
   @override
   Widget build(BuildContext context) {
 
@@ -257,15 +274,60 @@ class _Register_screenState extends State<Register_screen> {
                 SizedBox(
                   height: 20,
                 ),
-                CommonButton(
-                  color: Colors.blue,
-                  text: "Continue woth Google",
-                  onPressed: () {
-                    if (form.currentState!.validate()) {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => Login_Screen(),));
-                    }
+                GetBuilder<Controller>(
+                  builder: (controller) {
+                    return controller.loading
+                        ? CircularProgressIndicator()
+                        : CommonButton(
+                      onPressed: () async {
+                        if (form.currentState!.validate()) {
+                          setState(() {
+                            controller.loddder(true);
+                          });
+                          try {
+                            var userCredentials = await author
+                                .createUserWithEmailAndPassword(
+                                email: "${_email.text}",
+                                password:
+                                "${_password.text}");
+                            setState(() {
+                              controller.loddder(false);
+                            });
+                            user
+                                .doc('${userCredentials.user!.uid}')
+                                .set({
+                              'name': _firstName.text,
+                              'email': _email.text,
+                              'password': _password.text,
+                              'phone': _mobile_no.text
+                            });
+                            // box.write(
+                            //     'uid', '${userCredentials.user!.uid}');
+                            //
+                            Get.off(bottombar());
+                            // print('${userCredentials.user!.email}');
+                          } on FirebaseAuthException catch (e) {
+                            Get.snackbar('', "${e.message}");
+                            setState(() {
+                              controller.loddder(false);
+                            });
+                          }
+                        }
+                      },
+                      text: "Register",
+                      color: Colors.blue,
+                    );
                   },
                 ),
+                // CommonButton(
+                //   color: Colors.blue,
+                //   text: "Continue woth Google",
+                //   onPressed: () {
+                //     if (form.currentState!.validate()) {
+                //       Navigator.push(context, MaterialPageRoute(builder: (context) => Login_Screen(),));
+                //     }
+                //   },
+                // ),
                 SizedBox(
                   height: h*0.015,
                 ),
