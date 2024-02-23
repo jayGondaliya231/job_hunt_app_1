@@ -3,10 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:job_hunt_app/view/BottomBar.dart';
+import 'package:job_hunt_app/view/Home_Screen.dart';
 import 'package:job_hunt_app/view/auth/Register_Screen.dart';
 import 'package:job_hunt_app/view/auth/Welcome_Screen.dart';
+import 'package:job_hunt_app/view/auth/selection_screen.dart';
 
 import 'Controller/controller.dart';
+
 import 'firebase_options.dart';
 
 
@@ -27,7 +31,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       color: Colors.white,
       debugShowCheckedModeBanner: false,
-      home: Register_screen(),
+      home:bottombar(),
     );
   }
   Controller counterController = Get.put(Controller());

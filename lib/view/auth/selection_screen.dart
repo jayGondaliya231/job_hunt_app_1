@@ -110,7 +110,11 @@ class _Selection_screenState extends State<Selection_screen> {
                             width: w * 0.12,
                           ),
                           IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                setState(() {
+                                  select = index;
+                                });
+                              },
                               icon: select != index
                                   ? Icon(Icons.circle_outlined)
                                   : Icon(

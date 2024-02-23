@@ -55,7 +55,6 @@ class _Register_screenState extends State<Register_screen> {
             padding: EdgeInsets.symmetric(horizontal: w * 0.08),
             child: Column(
               children: [
-
                 FittedBox(
                   fit: BoxFit.cover,
                   child: Container(
@@ -65,7 +64,6 @@ class _Register_screenState extends State<Register_screen> {
                         "assets/images/JOB HUNT 12.png"),
                   ),
                 ),
-
                 Text(
                   "Sign up to find work you",
                   style: TextStyle(
@@ -198,7 +196,6 @@ class _Register_screenState extends State<Register_screen> {
                     return null;
                   },
                 ),
-
                 SizedBox(
                   height: h*0.015,
                 ),

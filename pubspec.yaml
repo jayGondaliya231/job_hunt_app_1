@@ -71,7 +71,7 @@ dependencies:
 #  neon_widgets: ^2.0.0
   google_fonts: ^6.1.0
   flutter_svg: ^2.0.9
-  salomon_bottom_bar: ^3.3.2
+  persistent_bottom_nav_bar: ^5.0.2
   get_storage: ^2.1.1
   google_sign_in: ^6.2.1
   text_scroll: ^0.2.0
