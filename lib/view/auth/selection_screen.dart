@@ -74,7 +74,7 @@ class _Selection_screenState extends State<Selection_screen> {
                     margin: EdgeInsets.symmetric(vertical: h * 0.01),
                     decoration: BoxDecoration(
                       color: Colors.white,
-                      border: Border.all(color: Colors.blue, width: 2),
+                      border: Border.all(color: Color(0xff557688), width: 2),
                       borderRadius: BorderRadius.circular(h * 0.02),
                     ),
                     child: Padding(
@@ -83,7 +83,7 @@ class _Selection_screenState extends State<Selection_screen> {
                         children: [
                           Icon(
                             item[index]['icon'],
-                            color: Colors.blue,
+                            color: Color(0xff557688),
                             size: h * 0.05,
                           ),
                           SizedBox(
@@ -130,7 +130,7 @@ class _Selection_screenState extends State<Selection_screen> {
             ),
             Spacer(),
             CommonButton(
-              color: Colors.blue.shade600,
+              color: Color(0xff557688),
               text: "Continue",
               onPressed: () {
                 setState(() {

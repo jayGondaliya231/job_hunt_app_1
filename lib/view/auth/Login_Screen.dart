@@ -103,7 +103,7 @@ class _Login_ScreenState extends State<Login_Screen> {
                     }
                   },
                   text: "Login",
-                  color: Colors.blue,
+                  color: Color(0xff557688),
                 ),
                 SizedBox(
                   height: h*0.015,
@@ -130,7 +130,7 @@ class _Login_ScreenState extends State<Login_Screen> {
                         "Register",
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: Colors.blue,
+                            color: Color(0xff557688),
                             decoration: TextDecoration.underline),
                       ),
                     ),
@@ -170,7 +170,7 @@ class _Login_ScreenState extends State<Login_Screen> {
                     width: w / 1.2,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(w * 0.12),
-                      color: Colors.blue,
+                      color: Color(0xff557688),
                     ),
                     child: Row(
                       children: [

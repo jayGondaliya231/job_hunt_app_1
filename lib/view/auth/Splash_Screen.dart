@@ -167,7 +167,7 @@ class _SplaceScreenState extends State<SplaceScreen> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: width * 0.05),
                 child: CommonButton(
-                    color: Colors.blue.shade600,
+                    color: Color(0xff557688),
                     text: selected == 2 ? "Get Started" : "Next",
                     onPressed: () {
                       if (selected != 2) {

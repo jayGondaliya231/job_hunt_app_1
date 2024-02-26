@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:text_scroll/text_scroll.dart';
 
+import 'auth/Category_Screen.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -26,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
     },
     {
       "icon": Icons.school_outlined,
-      "title": "Teacher",
+      "title": "Education",
     },
   ];
   List<Map<String,dynamic>> job =[
@@ -78,7 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
     final h = MediaQuery.sizeOf(context).height;
     final w = MediaQuery.sizeOf(context).width;
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.grey.shade100,
       drawer: Drawer(
         backgroundColor: Colors.white,
         child: Column(
@@ -192,7 +194,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       appBar: AppBar(
-        backgroundColor: Colors.blue,
+        backgroundColor: Color(0xff557688),
         elevation: 0,
         scrolledUnderElevation: 0,
         title: Text(
@@ -205,7 +207,7 @@ class _HomeScreenState extends State<HomeScreen> {
             margin: EdgeInsets.only(right: 15),
             child: CircleAvatar(
               backgroundImage: NetworkImage(
-                  'https://www.profilebakery.com/wp-content/uploads/2023/03/AI-Profile-Picture.jpg'),
+                  'https://play-lh.googleusercontent.com/C9CAt9tZr8SSi4zKCxhQc9v4I6AOTqRmnLchsu1wVDQL0gsQ3fmbCVgQmOVM1zPru8UH=w240-h480-rw'),
             ),
           ),
         ],
@@ -264,10 +266,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 Spacer(),
-                Text(
-                  "View All",
-                  style: TextStyle(
-                    color: Colors.grey,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => CategoryScreen(),));
+                  },
+                  child: Text(
+                    "View All",
+                    style: TextStyle(
+                      color: Colors.grey,
+                    ),
                   ),
                 )
               ],
@@ -298,7 +305,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           margin: EdgeInsets.symmetric(horizontal: w * 0.02),
                           decoration: BoxDecoration(
                               color:
-                                  selected == index ? Colors.blue : Colors.blue,
+                                  selected == index ? Color(0xff557688) : Colors.white,
                               borderRadius: BorderRadius.circular(h * 0.03),
                               boxShadow: [
                                 BoxShadow(
@@ -343,6 +350,22 @@ class _HomeScreenState extends State<HomeScreen> {
                       )),
             ),
           ),
+          Padding(
+            padding:  EdgeInsets.symmetric(horizontal: w*0.03,vertical: h*0.007),
+            child: Row(
+              children: [
+                Text(
+                  "Popular Job",
+                  style: TextStyle(
+                    fontSize: h * 0.02,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Spacer(),
+
+              ],
+            ),
+          ),
           Expanded(
             child: ListView.builder(
               itemCount: 8,
@@ -353,17 +376,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   margin: EdgeInsets.symmetric(vertical: h * 0.01),
                   decoration: BoxDecoration(
                       color: Colors.white,
-                      border: Border.all(
-                        color: Colors.black,
-                        width: 2,
-                      ),
+                     borderRadius: BorderRadius.circular(h*0.02),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black,
-                          blurRadius: 0,
-                          spreadRadius: -1,
-                          offset: Offset(-4, 6),
-                        )
+                            offset: Offset(1, 1),
+                            blurRadius: 4,
+                            spreadRadius: 1.5,
+                            color: Colors.grey.shade400),
                       ]),
                   child: Padding(
                     padding: EdgeInsets.symmetric(
@@ -428,7 +447,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   height: h * 0.022,
                                   width: w * 0.3,
                                   decoration: BoxDecoration(
-                                    color: Colors.tealAccent,
+                                    color: Colors.blueGrey.shade300,
                                     borderRadius:
                                         BorderRadius.circular(w * 0.01),
                                   ),
@@ -437,6 +456,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     "As per Industry Standards",
                                     style: TextStyle(
                                         fontSize: h * 0.009,
+                                        color: Colors.white,
                                         fontWeight: FontWeight.bold),
                                   )),
                                 ),
@@ -449,7 +469,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   decoration: BoxDecoration(
                                       borderRadius:
                                           BorderRadius.circular(h * 0.02),
-                                      color: Colors.teal.shade300),
+                                      color: Colors.blueGrey),
                                   child: Center(
                                       child: Text(
                                     "Apply",
@@ -475,7 +495,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 SizedBox(
                                   width: w*0.19,
                                 ),
-                                Icon(Icons.favorite_border,color: Colors.red,),
+                                Icon(Icons.bookmark_add_outlined,color: Colors.grey,),
                                 SizedBox(
                                   width: w*0.025,
                                 ),

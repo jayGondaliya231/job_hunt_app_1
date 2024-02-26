@@ -13,7 +13,7 @@ class _Welcome_ScreenState extends State<Welcome_Screen> {
   @override
   void initState() {
     Timer(
-      Duration(seconds: 4),
+      Duration(seconds: 3),
       () => Navigator.push(
           context,
           MaterialPageRoute(

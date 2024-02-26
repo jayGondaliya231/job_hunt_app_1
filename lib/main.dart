@@ -10,9 +10,7 @@ import 'package:job_hunt_app/view/auth/Welcome_Screen.dart';
 import 'package:job_hunt_app/view/auth/selection_screen.dart';
 
 import 'Controller/controller.dart';
-
 import 'firebase_options.dart';
-
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -31,7 +29,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       color: Colors.white,
       debugShowCheckedModeBanner: false,
-      home:bottombar(),
+      home:Welcome_Screen(),
     );
   }
   Controller counterController = Get.put(Controller());
