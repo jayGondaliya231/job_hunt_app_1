@@ -7,11 +7,13 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:job_hunt_app/common_Widget/common_button.dart';
 import 'package:job_hunt_app/common_Widget/common_textfield.dart';
 import 'package:provider/provider.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../../Controller/controller.dart';
 import '../../Providers/AuthProvider.dart';
 import '../BottomBar.dart';
 import 'Login_Screen.dart';
+
 
 class Register_screen extends StatefulWidget {
   const Register_screen({super.key});
@@ -419,6 +421,7 @@ class _Register_screenState extends State<Register_screen> {
                                           fontFamily: "Roboto-Bold",
                                           fontSize: 18),
                                     ),
+
                                     SizedBox(
                                       height: 20,
                                     ),

@@ -8,8 +8,10 @@ import 'package:job_hunt_app/view/Home_Screen.dart';
 import 'package:job_hunt_app/view/auth/Register_Screen.dart';
 import 'package:job_hunt_app/view/auth/Welcome_Screen.dart';
 import 'package:job_hunt_app/view/auth/selection_screen.dart';
+import 'package:provider/provider.dart';
 
 import 'Controller/controller.dart';
+import 'Providers/AuthProvider.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -26,10 +28,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return ChangeNotifierProvider(
+      create: (context) => Auth(),
+      child: GetMaterialApp(
       color: Colors.white,
       debugShowCheckedModeBanner: false,
       home:Welcome_Screen(),
+    ),
     );
   }
   Controller counterController = Get.put(Controller());
