@@ -49,8 +49,8 @@ class _CategoryScreenState extends State<CategoryScreen> {
   int select_id = 0;
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
-    final width = MediaQuery.of(context).size.width;
+    final h = MediaQuery.of(context).size.height;
+    final w = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Colors.grey.shade100,
       appBar: AppBar(
@@ -60,11 +60,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
         centerTitle: true,
         leading: IconButton(
           onPressed: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => HomeScreen(),
-                ));
+           Navigator.pop(context);
           },
           icon: Icon(
             Icons.arrow_back_ios_new,
@@ -78,7 +74,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
       body: Column(
         children: [
           Container(
-            height: height * 0.9,
+            height: h * 0.9,
             child: ListView.builder(
               scrollDirection: Axis.vertical,
               itemCount: 7,
@@ -99,13 +95,13 @@ class _CategoryScreenState extends State<CategoryScreen> {
                         }
                       },
                       child: Container(
-                        height: height * 0.15,
+                        height: h * 0.15,
                         width: double.infinity,
                         margin: EdgeInsets.symmetric(
-                            vertical: height * 0.02, horizontal: width * 0.06),
+                            vertical: h * 0.02, horizontal: w * 0.06),
                         decoration: BoxDecoration(
                             color: Colors.white,
-                            borderRadius: BorderRadius.circular(height * 0.015),
+                            borderRadius: BorderRadius.circular(h * 0.015),
                             boxShadow: [
                               BoxShadow(
                                 offset: Offset(1, 1),
@@ -118,13 +114,13 @@ class _CategoryScreenState extends State<CategoryScreen> {
                         child: Row(
                           children: [
                             Container(
-                              height: height * 0.11,
-                              width: width * 0.25,
-                              margin: EdgeInsets.only(left: width * 0.04),
+                              height: h * 0.11,
+                              width: w * 0.25,
+                              margin: EdgeInsets.only(left: w * 0.04),
                               decoration: BoxDecoration(
                                 color: Colors.grey,
                                 borderRadius:
-                                BorderRadius.circular(height * 0.02),
+                                BorderRadius.circular(h * 0.02),
                               ),
                               child: Image.network(
                                 category[index]['pic'],
@@ -132,7 +128,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                               ),
                             ),
                             SizedBox(
-                              width: width * 0.08,
+                              width: w * 0.08,
                             ),
                             Column(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -141,12 +137,12 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                 Text(
                                   category[index]['text'],
                                   style: TextStyle(
-                                    fontSize: height * 0.02,
+                                    fontSize: h * 0.02,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
                                 SizedBox(
-                                  height: height * 0.01,
+                                  height: h * 0.01,
                                 ),
                                 Text(
                                   category[index]['item'],
@@ -160,8 +156,8 @@ class _CategoryScreenState extends State<CategoryScreen> {
                     ),
                     Positioned(
                       child: Icon(Icons.arrow_forward_ios_rounded),
-                      right: width * 0.12,
-                      top: height * 0.08,
+                      right: w * 0.12,
+                      top: h * 0.08,
                     ),
                   ],
                 );

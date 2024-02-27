@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:job_hunt_app/view/ChatList_User.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 import 'Profiles_Screen.dart';
@@ -19,11 +20,7 @@ class _bottombarState extends State<bottombar> {
   var _currentIndex = 0;
   List screen = [
     HomeScreen(),
-    Center(
-        child: Text(
-      "Message",
-      style: TextStyle(fontSize: 30),
-    )),
+   ChatListUser(),
     Center(
         child: Text(
       "Save",

@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
       child: GetMaterialApp(
       color: Colors.white,
       debugShowCheckedModeBanner: false,
-      home:Welcome_Screen(),
+      home:bottombar(),
     ),
     );
   }

@@ -438,10 +438,7 @@ class _Register_screenState extends State<Register_screen> {
                     } else {
                       if (form.currentState!.validate()) {
                         try{
-                          final User =
-                          Provider.of<Auth>(context,listen: false);
-
-
+                          final User = Provider.of<Auth>(context,listen: false);
                           User.createUser(_email.text, _password.text)
                               .then((value) {
                             FirebaseFirestore.instance
@@ -518,11 +515,9 @@ class _Register_screenState extends State<Register_screen> {
                   text: "Register",
                   color: Color(0xff557688),
                 ),
-
-
                 // CommonButton(
                 //   color: Color(0xff557688),
-                //   text: "Continue woth Google",
+                //   text: "Continue with Google",
                 //   onPressed: () {
                 //     if (form.currentState!.validate()) {
                 //       Navigator.push(context, MaterialPageRoute(builder: (context) => Login_Screen(),));
